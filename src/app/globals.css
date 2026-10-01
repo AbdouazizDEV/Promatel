@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --promatel-navy-deep: #082d72;
+  --promatel-navy: #1a3a6b;
+  --promatel-blue: #33518a;
+  --promatel-blue-light: #5a7bb8;
+  --promatel-primary: #446084;
+  --promatel-red: #d01231;
+  --promatel-red-dark: #a80e26;
+  --promatel-accent: #d83c55;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-promatel-navy-deep: var(--promatel-navy-deep);
+  --color-promatel-navy: var(--promatel-navy);
+  --color-promatel-blue: var(--promatel-blue);
+  --color-promatel-blue-light: var(--promatel-blue-light);
+  --color-promatel-primary: var(--promatel-primary);
+  --color-promatel-red: var(--promatel-red);
+  --color-promatel-red-dark: var(--promatel-red-dark);
+  --color-promatel-accent: var(--promatel-accent);
+  --font-sans: "Roboto", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --animate-marquee: marquee 35s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--promatel-accent) 35%, transparent);
+}
