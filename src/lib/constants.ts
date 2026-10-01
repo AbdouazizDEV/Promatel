@@ -7,7 +7,8 @@ export const siteConfig = {
   description:
     "PROMATEL accompagne les opérateurs et entreprises dans la production, l'installation et la maintenance de leurs infrastructures télécoms et réseaux.",
   email: "contact@promatelsn.com",
-  phone: "+221 33 000 00 00",
+  phone: "+221 77 298 01 05",
+  whatsapp: "+221 77 298 01 05",
   hours: "08:00 - 17:00",
   address: "Dakar, Sénégal",
   credit: {
@@ -68,15 +69,15 @@ export const services = [
 export const partners = [
   {
     name: "Orange",
-    logo: "https://promatelsn.com/wp-content/uploads/2021/10/Orange-logo-scaled-200x200.jpg",
+    logo: "/Orange-logo-500x500.webp",
   },
   {
-    name: "Tigo",
-    logo: "https://promatelsn.com/wp-content/uploads/2021/10/677-6779297_tigo-logo-200x200.jpg",
+    name: "Yas",
+    logo: "/yas-tanzania-logo-png_seeklogo-566393.webp",
   },
   {
     name: "Expresso",
-    logo: "https://promatelsn.com/wp-content/uploads/2021/10/images-2-200x200.jpg",
+    logo: "/logo-expresso.webp",
   },
 ] as const;
 

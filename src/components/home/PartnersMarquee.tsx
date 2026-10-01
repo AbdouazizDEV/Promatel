@@ -17,7 +17,7 @@ function PartnerLogo({
 }) {
   return (
     <figure
-      className="group/logo flex h-[72px] w-[140px] shrink-0 items-center justify-center px-4 md:h-[88px] md:w-[180px]"
+      className="group/logo flex h-[80px] w-[160px] shrink-0 items-center justify-center px-3 md:h-[96px] md:w-[200px]"
       title={name}
       aria-hidden={decorative}
     >
@@ -27,8 +27,8 @@ function PartnerLogo({
         width={180}
         height={88}
         priority={priority}
-        className="max-h-full w-auto max-w-full object-contain opacity-85 transition duration-300 group-hover/logo:scale-[1.06] group-hover/logo:opacity-100"
-        sizes="180px"
+        className="max-h-full w-auto max-w-full object-contain transition duration-300 group-hover/logo:scale-[1.08] drop-shadow-sm"
+        sizes="200px"
       />
     </figure>
   );
