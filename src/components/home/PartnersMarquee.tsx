@@ -4,8 +4,38 @@ import Image from "next/image";
 import { partners } from "@/lib/constants";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
+function PartnerLogo({
+  name,
+  logo,
+  priority,
+  decorative,
+}: {
+  name: string;
+  logo: string;
+  priority?: boolean;
+  decorative?: boolean;
+}) {
+  return (
+    <figure
+      className="group/logo flex h-[72px] w-[140px] shrink-0 items-center justify-center px-4 md:h-[88px] md:w-[180px]"
+      title={name}
+      aria-hidden={decorative}
+    >
+      <Image
+        src={logo}
+        alt={decorative ? "" : name}
+        width={180}
+        height={88}
+        priority={priority}
+        className="max-h-full w-auto max-w-full object-contain opacity-85 transition duration-300 group-hover/logo:scale-[1.06] group-hover/logo:opacity-100"
+        sizes="180px"
+      />
+    </figure>
+  );
+}
+
 export function PartnersMarquee() {
-  const track = [...partners, ...partners, ...partners];
+  const track = [...partners, ...partners];
 
   return (
     <section className="overflow-hidden border-y border-slate-100 bg-white py-16 md:py-20">
@@ -13,26 +43,16 @@ export function PartnersMarquee() {
         <SectionHeading title="Ils nous ont fait confiance" />
       </div>
 
-      <div className="relative mt-4">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-white to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-white to-transparent" />
-
-        <div className="flex animate-marquee gap-12 py-4">
+      <div className="partners-marquee relative mt-8 md:mt-10">
+        <div className="partners-marquee__track flex items-center gap-10 md:gap-16">
           {track.map((partner, i) => (
-            <div
+            <PartnerLogo
               key={`${partner.name}-${i}`}
-              className="flex h-24 w-40 shrink-0 items-center justify-center rounded-xl bg-slate-50 p-4 grayscale transition-all hover:grayscale-0"
-            >
-              <div className="relative h-16 w-full">
-                <Image
-                  src={partner.logo}
-                  alt={partner.name}
-                  fill
-                  className="object-contain"
-                  sizes="160px"
-                />
-              </div>
-            </div>
+              name={partner.name}
+              logo={partner.logo}
+              priority={i < partners.length}
+              decorative={i >= partners.length}
+            />
           ))}
         </div>
       </div>

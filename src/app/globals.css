@@ -26,16 +26,110 @@
   --color-promatel-accent: var(--promatel-accent);
   --font-sans: "Roboto", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif;
-  --animate-marquee: marquee 35s linear infinite;
 }
 
-@keyframes marquee {
+@keyframes partners-marquee {
   from {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-33.333%);
+    transform: translateX(-50%);
   }
+}
+
+.partners-marquee {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 6%,
+    black 94%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 6%,
+    black 94%,
+    transparent
+  );
+}
+
+.partners-marquee__track {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  min-width: max-content;
+  animation: partners-marquee 42s linear infinite;
+  will-change: transform;
+}
+
+.partners-marquee:hover .partners-marquee__track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partners-marquee__track {
+    animation: none;
+  }
+}
+
+@keyframes grid-drift {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(48px, 48px);
+  }
+}
+
+@keyframes signal-flow {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scaleY(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes hero-shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-12deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-12deg);
+  }
+}
+
+.hero-grid-drift {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+  animation: grid-drift 20s linear infinite;
+}
+
+.hero-signal-bar {
+  animation: signal-flow 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.hero-visual-clip {
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 88% 100%, 0 100%);
+}
+
+.hero-shimmer {
+  animation: hero-shimmer 6s ease-in-out infinite;
+}
+
+.hero-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
 }
 
 html {

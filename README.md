@@ -30,3 +30,24 @@ Modifier les coordonnées et textes dans `src/lib/constants.ts`.
 npm run build
 npm start
 ```
+
+## Déploiement Vercel
+
+1. Pousser le dépôt sur GitHub (`AbdouazizDEV/Promatel`).
+2. Sur [vercel.com](https://vercel.com), **Add New Project** → importer le repo **Promatel**.
+3. Vercel détecte **Next.js** automatiquement :
+   - **Framework Preset** : Next.js
+   - **Build Command** : `npm run build` (défaut)
+   - **Output Directory** : `.next` (défaut)
+   - **Install Command** : `npm install` (défaut)
+4. Aucune variable d'environnement n'est requise pour l'instant (contenu dans `src/lib/constants.ts`).
+5. Déployer. Pour le domaine `promatelsn.com`, ajouter le domaine dans **Project Settings → Domains** et configurer les DNS chez le registrar.
+
+### CLI (optionnel)
+
+```bash
+npx vercel
+npx vercel --prod
+```
+
+Les redirections (`/partenaires`, `/a-propos-de-nous`) sont définies dans `next.config.ts`.

@@ -10,8 +10,18 @@ export const siteConfig = {
   phone: "+221 33 000 00 00",
   hours: "08:00 - 17:00",
   address: "Dakar, Sénégal",
-  copyright: "Soft digital Solution",
+  credit: {
+    name: "KAHFI SN",
+    url: "https://abdouazizdiop.vercel.app/",
+  },
 };
+
+export const socialLinks = [
+  { href: "#", label: "Facebook", network: "facebook" as const },
+  { href: "#", label: "Instagram", network: "instagram" as const },
+  { href: "#", label: "X (Twitter)", network: "x" as const },
+  { href: "#", label: "LinkedIn", network: "linkedin" as const },
+] as const;
 
 export const navLinks = [
   { href: "/", label: "Accueil" },
@@ -65,25 +75,31 @@ export const partners = [
     logo: "https://promatelsn.com/wp-content/uploads/2021/10/677-6779297_tigo-logo-200x200.jpg",
   },
   {
-    name: "Partenaire",
+    name: "Expresso",
     logo: "https://promatelsn.com/wp-content/uploads/2021/10/images-2-200x200.jpg",
   },
 ] as const;
 
 export const heroSlides = [
   {
-    image:
+    background:
       "https://promatelsn.com/wp-content/uploads/2021/10/fond-technologie-blanc_23-2148388954.jpg",
+    product: "/yealink-t54w.png",
+    productAlt: "Téléphone IP Yealink T54W",
     title: "Production et Maintenance des infrastructures Télécoms",
   },
   {
-    image:
+    background:
       "https://promatelsn.com/wp-content/uploads/2021/10/molecules-abstraites-fond-gris-doux-structures-moleculaires-brin-adn-reseau-neuronal-genie-genetique-concept-scientifique-technologique_120542-594.jpg",
+    product: "/unnamed-2.png",
+    productAlt: "Infrastructure réseau et fibre optique",
     title: "Pour une gestion efficace de vos infrastructures réseaux",
   },
   {
-    image:
+    background:
       "https://promatelsn.com/wp-content/uploads/2021/10/laboratoire_telecom-1.jpg",
+    product: "/eecefcd3-50f9-4caa-a47c-b84f0f58c929.png",
+    productAlt: "Câble réseau professionnel",
     title: "Production et maintenance des infrastructures réseaux",
   },
 ] as const;
